@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Anurag Basak</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary-color: #2c5aa0;
+            --accent-color: #d4a574;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --bg-light: #f9f8f6;
+            --border-color: #e0dcd5;
+            --hover-bg: #f0ede7;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+        }
+
+        .header {
+            background: white;
+            padding: 2rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .header a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-right: 2rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .header a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .header a:hover {
+            color: var(--primary-color);
+        }
+
+        .header a:hover::after {
+            width: 100%;
+        }
+
+        .main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+            min-height: calc(100vh - 200px);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .main h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            letter-spacing: -1px;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e3f5a 100%);
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        table td {
+            padding: 1rem 1.2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s ease;
+        }
+
+        table tbody tr:hover {
+            background-color: var(--hover-bg);
+        }
+
+        table tbody tr:last-child {
+            background-color: #faf9f7;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        table tbody tr:last-child:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .score-high {
+            color: #27a745;
+            font-weight: 600;
+        }
+
+        .score-medium {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .score-low {
+            color: #dc3545;
+            font-weight: 600;
+        }
+
+        .footer {
+            background: white;
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        .footer h5 {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                padding: 2rem 4%;
+            }
+
+            .main h1 {
+                font-size: 2.5rem;
+            }
+
+            .header a {
+                margin-right: 1rem;
+                font-size: 0.85rem;
+            }
+
+            table th,
+            table td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="./index.html">Home</a> |
+        <a href="./academics.html">Academics</a> |
+        <a href="./personal.html">Personal</a> |
+        <a href="./contact.html">Contact</a> |
+        <a href="./resume.html">Resume</a>
+    </div>
+
+    <div class="main">
+        <h1>Mark Sheet</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>English</td>
+                        <td class="score-high">88</td>
+                    </tr>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td class="score-high">95</td>
+                    </tr>
+                    <tr>
+                        <td>Science</td>
+                        <td class="score-high">87</td>
+                    </tr>
+                    <tr>
+                        <td>Social Studies</td>
+                        <td class="score-medium">61</td>
+                    </tr>
+                    <tr>
+                        <td>Humanities</td>
+                        <td class="score-low">42</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>373</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h5>Anurag Basak | May Batch, 2024 | © Copyright 2026</h5>
+    </div>
+</body>
+
+</html>

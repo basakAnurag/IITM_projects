@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anurag Basak - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary-color: #2c5aa0;
+            --accent-color: #d4a574;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --bg-light: #f9f8f6;
+            --border-color: #e0dcd5;
+            --hover-bg: #f0ede7;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+        }
+
+        .header {
+            background: white;
+            padding: 2rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .header a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-right: 2rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .header a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .header a:hover {
+            color: var(--primary-color);
+        }
+
+        .header a:hover::after {
+            width: 100%;
+        }
+
+        .main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+            min-height: calc(100vh - 200px);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .main h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+
+        .student-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .student-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 8px 24px rgba(212, 165, 116, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .student-card p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        .student-card p strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .intro-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-top: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .footer {
+            background: white;
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        .footer h5 {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                padding: 2rem 4%;
+            }
+
+            .main h1 {
+                font-size: 2.5rem;
+            }
+
+            .header a {
+                margin-right: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <a href="./index.html">Home</a> |
+    <a href="./academics.html">Academics</a> |
+    <a href="./personal.html">Personal</a> |
+    <a href="./contact.html">Contact</a> |
+    <a href="./resume.html">Resume</a>
+</div>
+
+<div class="main">
+    <h1>Welcome</h1>
+    <div class="student-card">
+        <p><strong>Name:</strong> Anurag Basak</p>
+        <p><strong>ID:</strong> 24F2003488</p>
+        <p class="intro-text">
+            <strong>About Me:</strong> Hello! I'm an enthusiastic learner with a passion for music and creative pursuits. I'm committed to continuous growth and exploring new opportunities.
+        </p>
+    </div>
+</div>
+
+<div class="footer">
+    <h5>Anurag Basak | May Batch, 2024 | © Copyright 2026</h5>
+</div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal - Anurag Basak</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --primary-color: #2c5aa0;
+            --accent-color: #d4a574;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --bg-light: #f9f8f6;
+            --border-color: #e0dcd5;
+            --hover-bg: #f0ede7;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+        }
+
+        .header {
+            background: white;
+            padding: 2rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .header a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-right: 2rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .header a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .header a:hover {
+            color: var(--primary-color);
+        }
+
+        .header a:hover::after {
+            width: 100%;
+        }
+
+        .main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+            min-height: calc(100vh - 200px);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .main h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            letter-spacing: -1px;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .image-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .image-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 12px 32px rgba(212, 165, 116, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .image-card img {
+            display: block;
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0ede7 0%, #e8e3db 100%);
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .cta-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .cta-section p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .cta-link {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e3f5a 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e3f5a 0%, var(--primary-color) 100%);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .cta-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 90, 160, 0.3);
+        }
+
+        .cta-link:hover::before {
+            left: 0;
+        }
+
+        .footer {
+            background: white;
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        .footer h5 {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                padding: 2rem 4%;
+            }
+
+            .main h1 {
+                font-size: 2.5rem;
+            }
+
+            .header a {
+                margin-right: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="./index.html">Home</a> |
+        <a href="./academics.html">Academics</a> |
+        <a href="./personal.html">Personal</a> |
+        <a href="./contact.html">Contact</a> |
+        <a href="./resume.html">Resume</a>
+    </div>
+
+    <div class="main">
+        <h1>Personal</h1>
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">
+                    <img src="Foundation.png" alt="Foundation">
+                </div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">
+                    <img src="degree.png" alt="Degree">
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <p>Explore more about the Online Degree program at IIT Madras</p>
+            <a href="http://www.onlinedegree.iitm.ac.in" class="cta-link">Visit Online Degree Webpage</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h5>Anurag Basak | May Batch, 2024 | © Copyright 2026</h5>
+    </div>
+</body>
+
+</html>
