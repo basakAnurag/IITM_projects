@@ -1,1 +1,1 @@
-All the projects done throughout the course.
+# All MAD projects done in the course.
